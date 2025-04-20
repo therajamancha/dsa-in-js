@@ -33,3 +33,25 @@ for (let i = 0; i < data.length; i++) {
 
 console.log(data);
  */
+
+// insertion sort
+
+const data = [4, 1];
+
+for (let i = 1; i < data.length; i++) {
+  let current = data[i], // 1
+    prev = i - 1; // 0
+
+  // 4 > 1
+  while (prev >= 0 && data[prev] > current) {
+    data[prev + 1] = data[prev];
+    // 1 = 4
+    prev--; // prev = -1
+  }
+  // [4 , 4]
+
+  // prev (-1) + 1 = 0 data[0] = 1
+  data[prev + 1] = current;
+}
+
+console.log(data);
